@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import CounterTow from './components/CounterTow';
+import HoverCounter from './components/HoverCounter';
+import Counter from './components/Counter' 
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {
+        /*<CounterTow />
+        <HoverCounter /> */
+        }
+      <center>
+      <Counter render={ (count,clickHandler) => ( 
+          <CounterTow count={count} clickHandler={clickHandler} /> 
+      )} 
+      />
+      <Counter render={ (count,clickHandler) =>(
+        <HoverCounter count={count} clickHandler={clickHandler} />
+      )} 
+      />  
+      </center>
+      </div>
+    )
+  }
 }
-
-export default App;
+export default App
